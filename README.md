@@ -1,8 +1,8 @@
 # LibreBill
 
-LibreBill is a free and open source billing platform solution for web hosts, cloud providers and freelancers.
+> This project is currently under active development. Not for production use yet.
 
----
+LibreBill is a free and open source billing platform solution for web hosts, cloud providers and freelancers.
 
 ## Technical Justifications
 
