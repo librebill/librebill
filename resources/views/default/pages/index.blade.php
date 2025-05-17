@@ -14,7 +14,7 @@
 
   createApp({
     setup() {
-      const message = ref('{{ config('app.name') }} with Bootstrap 5')
+      const message = ref('Home')
 
       return {
         message
