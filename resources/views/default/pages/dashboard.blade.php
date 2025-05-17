@@ -4,8 +4,6 @@
 
 @section('content')
 <div class="container-fluid">
-    <h1 class="mb-4">Dashboard</h1>
-
     <div class="row">
         <!-- Sidebar -->
         <div class="col-lg-3 mb-4">
@@ -24,9 +22,9 @@
                     Quick Links
                 </div>
                 <div class="list-group list-group-flush">
-                    <a href="#" class="list-group-item list-group-item-action">Billing</a>
-                    <a href="#" class="list-group-item list-group-item-action">Services</a>
-                    <a href="#" class="list-group-item list-group-item-action">Support</a>
+                    <a href="#" class="list-group-item list-group-item-action"><i class="fa-solid fa-fw fa-file-invoice-dollar me-2"></i>Billing</a>
+                    <a href="#" class="list-group-item list-group-item-action"><i class="fa-solid fa-fw fa-briefcase me-2"></i>Services</a>
+                    <a href="#" class="list-group-item list-group-item-action"><i class="fa-solid fa-fw fa-life-ring me-2"></i>Support</a>
                 </div>
             </div>
         </div>

@@ -12,13 +12,18 @@
     @endif
 
     <!-- Bootstrap 5 CSS -->
-    <link rel="stylesheet" href="{{ theme('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ theme('css/bootstrap.min.css') }}" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{{ theme('fontawesome/css/fontawesome.min.css') }}" />
+    <link rel="stylesheet" href="{{ theme('fontawesome/css/brands.min.css') }}" />
+    <link rel="stylesheet" href="{{ theme('fontawesome/css/solid.min.css') }}" />
 
     <!-- Stylesheets -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap">
-    <link rel="stylesheet" href="{{ theme('css/app.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" />
+    <link rel="stylesheet" href="{{ theme('css/app.css') }}" />
 
     <!-- Other Stacks -->
     @stack('head')
@@ -41,15 +46,15 @@
                         @else
                             <div class="dropdown">
                                 <button class="btn btn-outline-primary btn-sm dropdown-toggle" type="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                                    {{ auth()->user()->email }}
+                                    <i class="fa-solid fa-fw fa-user me-2"></i>{{ auth()->user()->email }}
                                 </button>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
-                                    <li><a class="dropdown-item" href="#">My Profile</a></li>
+                                    <li><a class="dropdown-item" href="#"><i class="fa-solid fa-fw fa-user-circle me-2"></i>My Profile</a></li>
                                     <li><hr class="dropdown-divider"></li>
                                     <li>
                                         <form method="POST" action="{{ route('logout') }}" class="d-inline">
                                             @csrf
-                                            <button type="submit" class="dropdown-item">Sign Out</button>
+                                            <button type="submit" class="dropdown-item"><i class="fa-solid fa-fw fa-sign-out-alt me-2"></i>Sign Out</button>
                                         </form>
                                     </li>
                                 </ul>
