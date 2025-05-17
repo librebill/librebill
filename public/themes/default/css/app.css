@@ -1,0 +1,96 @@
+/* Bootstrap 5 Customizations */
+
+/* Custom variables */
+:root {
+  --bs-body-font-family: 'Instrument Sans', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background: #F4F4F6;
+}
+
+/* Minimum height for main content area */
+main {
+  min-height: 70vh;
+}
+
+/* Custom logo styling */
+.navbar-brand.logo {
+  font-weight: 700;
+}
+
+/* Make footer stick to bottom */
+html, body {
+  height: 100%;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+main {
+  flex: 1;
+}
+
+/* Custom utility classes */
+.text-inherit {
+  color: inherit;
+}
+
+/* Custom Card Styles */
+.card {
+    border: none; /* Remove default border */
+    border-radius: 0.5rem; /* Softer rounded corners */
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.card-header {
+    background-color: #f8f9fa; /* Light grey background for headers */
+    border-bottom: 1px solid #e9ecef; /* Subtle border for header separation */
+    font-weight: 600; /* Slightly bolder header text */
+    padding: 0.75rem 1.25rem; /* Standard padding */
+}
+
+.card-title {
+    font-weight: 600; /* Bolder card titles */
+}
+
+/* Specific Stat Card Styling */
+.card.text-white .card-title,
+.card.text-dark .card-title {
+    font-weight: 500; /* Slightly less bold for colored stat cards if needed */
+}
+
+.list-group-item {
+    border-left: none; /* Remove left border for cleaner look in lists */
+    border-right: none; /* Remove right border */
+    padding: 0.75rem 1.25rem;
+}
+
+.list-group-item:first-child {
+    border-top-left-radius: 0; /* Align with card's rounded corners */
+    border-top-right-radius: 0;
+}
+
+.list-group-item:last-child {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+/* Ensure a bit more spacing within card bodies */
+.card-body {
+    padding: 1.5rem; /* Increased padding for more whitespace */
+}
+
+/* Sidebar Quick Links adjustments */
+.list-group-item-action:hover {
+    background-color: #e9ecef; /* Subtle hover for quick links */
+}
+
+/* Gravatar image specific styling */
+.rounded-circle {
+    border: 3px solid #fff; /* White border around gravatar */
+    box-shadow: 0 0.25rem 0.5rem rgba(0,0,0,0.1); /* Subtle shadow for gravatar */
+}

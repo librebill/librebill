@@ -1,0 +1,15 @@
+{
+    "name": "Default",
+    "description": "The default theme for LibreBill.",
+    "slug": "default",
+    "url": "https://librebill.org",
+    "authors": [
+        {
+            "name": "Liam Nicolo N. Demafelix",
+            "email": "liam@librebill.org"
+        }
+    ],
+    "license": "GNU General Public License v3.0",
+    "license_url": "https://www.gnu.org/licenses/gpl-3.0.html",
+    "version": "1.0.0"
+}
