@@ -1,8 +1,14 @@
-# LibreBill
+<a href="https://librebill.org" target="_blank"><img src="https://raw.githubusercontent.com/librebill/librebill.github.io/refs/heads/main/images/logo-fixed.svg" height="45px"></a>
 
 > This project is currently under active development. Not for production use yet.
 
 LibreBill is a free and open source billing platform solution for web hosts, cloud providers and freelancers.
+
+<div align="center">
+<a href="https://raw.githubusercontent.com/librebill/librebill.github.io/refs/heads/main/images/screenshot.png" target="_blank">
+<img src="https://raw.githubusercontent.com/librebill/librebill.github.io/refs/heads/main/images/screenshot.png" />
+</a>
+</div>
 
 ## Technical Justifications
 
