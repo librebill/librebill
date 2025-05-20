@@ -42,7 +42,7 @@
             <div class="container">
                 <div class="row align-items-center">
                     <!-- Logo with increased space -->
-                    <div class="col-8 col-md-9">
+                    <div class="col-6">
                         <a class="navbar-brand logo fs-4" href="{{ url('/') }}">
                             @if (config('app.name') === 'LibreBill')
                                 <img src="{{ theme('images/logo.svg') }}" alt="{{ config('app.name') }}" />
@@ -52,7 +52,7 @@
                         </a>
                     </div>
                     <!-- Authentication Buttons -->
-                    <div class="col-4 col-md-3 text-end">
+                    <div class="col-6 text-end">
                         @guest
                             <a href="{{ route('login') }}" class="btn btn-outline-primary btn-sm me-2">Sign In</a>
                             <a href="{{ route('register') }}" class="btn btn-primary btn-sm">Register</a>
@@ -83,33 +83,31 @@
             </div>
         </header>
 
-        <!-- Navigation: Responsive Menu -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary border-top border-bottom">
-            <div class="container">
-                <!-- Brand is hidden on larger screens, but can be shown if needed -->
-                <span class="navbar-brand d-lg-none"></span>
+        @if (auth()->check())
+            <!-- Navigation: Responsive Menu -->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-primary border-top border-bottom">
+                <div class="container">
+                    <!-- Brand is hidden on larger screens, but can be shown if needed -->
+                    <span class="navbar-brand d-lg-none"></span>
 
-                <!-- Hamburger button moved to the right -->
-                <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                    <!-- Hamburger button moved to the right -->
+                    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        @if (auth()->check())
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             @include('navigation.authenticated')
-                        @else
-                            @include('navigation.guest')
-                        @endif
-                    </ul>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
+        @endif
 
         <!-- Content -->
-        <main class="py-4 flex-grow-1">
+        <main class="py-4 flex-grow-1 d-flex flex-column justify-content-center">
             <div class="container">
                 @if (auth()->check())
                     <div class="container-fluid">

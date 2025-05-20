@@ -50,6 +50,14 @@ main {
     padding: 2em 0;
 }
 
+.home-cards a:link, .home-cards a:visited {
+    text-decoration: none;
+}
+
+.home-cards a:hover {
+    text-decoration: none;
+}
+
 .dashcard .card-footer {
     border-top: 0;
 }
