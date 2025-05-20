@@ -36,7 +36,13 @@
                 <div class="row align-items-center">
                     <!-- Logo with increased space -->
                     <div class="col-8 col-md-9">
-                        <a class="navbar-brand logo fs-4" href="{{ url('/') }}">{{ config('app.name') }}</a>
+                        <a class="navbar-brand logo fs-4" href="{{ url('/') }}">
+                            @if (config('app.name') === 'LibreBill')
+                                <img src="{{ theme('images/logo.svg') }}" alt="{{ config('app.name') }}" />
+                            @else
+                                {{ config('app.name') }}
+                            @endif
+                        </a>
                     </div>
                     <!-- Authentication Buttons -->
                     <div class="col-4 col-md-3 text-end">
@@ -101,13 +107,12 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 mb-3 mb-md-0">
-                        <div class="text-muted">
-                            &copy; {{ date('Y') }} {{ config('app.name') }}. All rights reserved.
+                        <div class="text-muted text-center text-md-start">
+                            Copyright &copy; {{ date('Y') }} {{ config('app.name') }}
                         </div>
                     </div>
-                    <div class="col-md-6 text-md-end">
-                        <a href="#" class="text-decoration-none text-muted me-3">Privacy Policy</a>
-                        <a href="#" class="text-decoration-none text-muted">Terms of Service</a>
+                    <div class="col-md-6 text-center text-md-end">
+                        Powered by <a href="https://librebill.org" target="_blank" class="text-decoration-none text-muted">LibreBill</a>
                     </div>
                 </div>
             </div>
