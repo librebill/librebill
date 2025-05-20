@@ -11,6 +11,9 @@
         <script src="https://unpkg.com/vue@3/dist/vue.global{{ config('app.env') === 'production' ? '.prod' : '' }}.js"></script>
     @endif
 
+    <!-- Favicon -->
+    <link rel="shortuct icon" href="{{ url('favicon.ico') }}" type="image/x-icon" />
+
     <!-- Bootstrap 5 CSS -->
     <link rel="stylesheet" href="{{ theme('css/bootstrap.min.css') }}" />
 
