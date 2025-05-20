@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,7 +9,8 @@
 
     @if (!empty($vue))
         <!-- Vue Global -->
-        <script src="https://unpkg.com/vue@3/dist/vue.global{{ config('app.env') === 'production' ? '.prod' : '' }}.js"></script>
+        <script src="https://unpkg.com/vue@3/dist/vue.global{{ config('app.env') === 'production' ? '.prod' : '' }}.js">
+        </script>
     @endif
 
     <!-- Favicon -->
@@ -25,12 +27,14 @@
     <!-- Stylesheets -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" />
     <link rel="stylesheet" href="{{ theme('css/app.css') }}" />
 
     <!-- Other Stacks -->
     @stack('head')
 </head>
+
 <body>
     <div id="app" class="d-flex flex-column min-vh-100">
         <!-- Header: Logo and Authentication -->
@@ -54,16 +58,21 @@
                             <a href="{{ route('register') }}" class="btn btn-primary btn-sm">Register</a>
                         @else
                             <div class="dropdown">
-                                <button class="btn btn-outline-primary btn-sm dropdown-toggle" type="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                <button class="btn btn-outline-primary btn-sm dropdown-toggle" type="button"
+                                    id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fa-solid fa-fw fa-user me-2"></i>{{ auth()->user()->email }}
                                 </button>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
-                                    <li><a class="dropdown-item" href="#"><i class="fa-solid fa-fw fa-user-circle me-2"></i>My Profile</a></li>
-                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="#"><i
+                                                class="fa-solid fa-fw fa-user-circle me-2"></i>My Profile</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
                                     <li>
                                         <form method="POST" action="{{ route('logout') }}" class="d-inline">
                                             @csrf
-                                            <button type="submit" class="dropdown-item"><i class="fa-solid fa-fw fa-sign-out-alt me-2"></i>Sign Out</button>
+                                            <button type="submit" class="dropdown-item"><i
+                                                    class="fa-solid fa-fw fa-sign-out-alt me-2"></i>Sign Out</button>
                                         </form>
                                     </li>
                                 </ul>
@@ -81,8 +90,9 @@
                 <span class="navbar-brand d-lg-none"></span>
 
                 <!-- Hamburger button moved to the right -->
-                <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -101,7 +111,34 @@
         <!-- Content -->
         <main class="py-4 flex-grow-1">
             <div class="container">
-                @yield('content')
+                @if (auth()->check())
+                    <div class="container-fluid">
+                        @hasSection('breadcrumbs')
+                            <div class="row">
+                                <div class="col-12">
+                                    <nav class="bread" aria-label="breadcrumb">
+                                        <ol class="breadcrumb">
+                                            @yield('breadcrumbs')
+                                        </ol>
+                                    </nav>
+                                </div>
+                            </div>
+                        @endif
+                        <div class="row">
+                            <!-- Sidebar -->
+                            <div class="col-lg-3 mb-4">
+                                @include('navigation.user-sidebar')
+                            </div>
+
+                            <!-- Main Content -->
+                            <div class="col-lg-9">
+                                @yield('content')
+                            </div>
+                        </div>
+                    </div>
+                @else
+                    @yield('content')
+                @endif
             </div>
         </main>
 
@@ -115,7 +152,8 @@
                         </div>
                     </div>
                     <div class="col-md-6 text-center text-md-end">
-                        Powered by <a href="https://librebill.org" target="_blank" class="text-decoration-none text-muted">LibreBill</a>
+                        Powered by <a href="https://librebill.org" target="_blank"
+                            class="text-decoration-none text-muted">LibreBill</a>
                     </div>
                 </div>
             </div>
@@ -130,4 +168,5 @@
 
     @stack('scripts')
 </body>
+
 </html>

@@ -34,6 +34,34 @@ main {
   flex: 1;
 }
 
+.bread {
+    background: #fff;
+    padding: 12px 16px;
+    margin-bottom: 1em;
+    border-radius: 0.5rem; /* Softer rounded corners */
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.statrow {
+    margin-bottom: 1em;
+}
+
+.statcard {
+    padding: 2em 0;
+}
+
+.dashcard .card-footer {
+    border-top: 0;
+}
+
+.dashcard .card-header {
+    border-bottom: 0;
+}
+
+.breadcrumb {
+    margin-bottom: 0;
+}
+
 /* Custom utility classes */
 .text-inherit {
   color: inherit;
